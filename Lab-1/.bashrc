@@ -75,6 +75,10 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+# bash prompt 출력 형식 설정 부분 (기본값이 chroot 아래 username@hostname:/absolute_path$)
+# 만약 컬러 프롬프트 옵션이 yes 라면 색상을 포함해서 출력
+# 아니면 색상 없이 위 형식으로 프롬프트를 출력한다.
+# Lab-1 Task-2 를 수행하기 위해서는 w 옵션을 W로 바꾸면 현재 폴더를 상대경로로 보여줌
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
