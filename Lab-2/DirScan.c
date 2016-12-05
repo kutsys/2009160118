@@ -20,6 +20,7 @@ void printdir(char *dir, int depth) {
 	while((entry = readdir(dp)) != NULL) {
 		lstat(entry->d_name, &statbuf);
 		if(S_ISDIR(statbuf.st_mode)) {
+			// 출력에서 현재 디렉토리 (.) 및 상위 디렉토리 (..) 제외		
 			if(strcmp(".", entry->d_name) == 0 || strcmp("..", entry->d_name) == 0) continue;
 			
 			// 받아들인 디렉토리 명이 . 으로 시작한다면 while문 스킵
