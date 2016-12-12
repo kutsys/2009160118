@@ -14,14 +14,17 @@ void* thread_function(void *arg) {
 	time_t ltime;
 	struct tm *ts;
 
-	ltime = time(NULL);
-	ts = localtime(&ltime);
-	srand(ltime);
+
 
 	while(1) {
-		r = rand()%10;
+		ltime = time(NULL);
+		ts = localtime(&ltime);
+		srand(ltime);
+		
 		printf("Thread: %d, Count : %d, ",(int)pthread_self() ,++count);
 		printf("Local Time : %4d-%2d-%2d %2d:%2d:%2d\n", ts->tm_year+1900, ts->tm_mon+1, ts->tm_mday, ts->tm_hour, ts->tm_min, ts->tm_sec);
+		
+		r = rand()%10;
 		sleep(r);
 		
 		if(count == 20)
