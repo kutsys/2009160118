@@ -50,7 +50,7 @@ int main(){
 			perror("Thread join failed");
 		}
 	}
-	printf("Fisihed Successfully\n");
+	printf("Finished Successfully\n");
 	exit(EXIT_SUCCESS);	
 }
 
