@@ -6,7 +6,7 @@
 #include <signal.h>
 
 #define KEYVAL 0627
-#define MEMSIZE 100
+#define MEMSIZE 64
 #define FFLAG 0
 #define PFLAG 1
 #define CFLAG 2
